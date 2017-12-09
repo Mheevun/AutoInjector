@@ -10,11 +10,11 @@ allprojects {
     }
 }
 
-implementation 'com.github.ppwasin:autoinjector:1.0.0'
+implementation 'com.github.ppwasin:autoinjector:1.0.1'
 
 
 # Sample Usage
-AutoExecutor.init(app)  # app is Application instance
+AutoInjector.init(app)  # app is Application instance
 
 
 # Cautions
