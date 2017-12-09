@@ -10,7 +10,7 @@ allprojects {
     }
 }
 
-implementation 'com.github.ppwasin:autoinjector:0.6'
+implementation 'com.github.ppwasin:autoinjector:1.0.0'
 
 
 # Sample Usage
