@@ -4,7 +4,7 @@ import android.app.Application
 import android.support.test.InstrumentationRegistry
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import com.ppwasin.autoinjector.AutoExecutor
+import com.ppwasin.autoinjector.AutoInjector
 import com.ppwasin.autoinjector.executor.IExecutor
 import com.ppwasin.autoinjector.integrationtest.injector.InjectedActivity
 import com.ppwasin.autoinjector.integrationtest.injector.InjectedData
@@ -14,7 +14,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class AutoExecutorExtTest {
+class AutoInjectorExtTest {
     @get:Rule
     var activityTestRule = ActivityTestRule(InjectedActivity::class.java, false, false)
     private val app = InstrumentationRegistry.getTargetContext().applicationContext as Application
@@ -30,7 +30,7 @@ class AutoExecutorExtTest {
                     injectedData = event.injectedData
             }
         }
-        AutoExecutor.init(app, customExecutor)
+        AutoInjector.init(app, customExecutor)
         activityTestRule.launchActivity(null)
 
         val injectedData = activityTestRule.activity.injectedData
@@ -39,6 +39,6 @@ class AutoExecutorExtTest {
         val customExecutorData = customExecutor.injectedData
         assertThat(customExecutorData).isNotNull()
 
-        AutoExecutor.clear()
+        AutoInjector.clear()
     }
 }

@@ -10,7 +10,7 @@ import com.ppwasin.autoinjector.lifecycle.SupportFragmentCallback
 /**
  * Created by cnr on 12/7/2017.
  */
-object AutoExecutor {
+object AutoInjector {
     private val lazyExecutor: Executor by lazy{
         Executor(ActivityCallback(), SupportFragmentCallback(), CallbackCreator())
     }

@@ -4,7 +4,7 @@ import android.app.Application
 import android.support.test.InstrumentationRegistry
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import com.ppwasin.autoinjector.AutoExecutor
+import com.ppwasin.autoinjector.AutoInjector
 import com.ppwasin.autoinjector.integrationtest.helper.UiTestHelper
 import com.ppwasin.autoinjector.integrationtest.injector.InjectedActivity
 import com.ppwasin.autoinjector.integrationtest.injector.InjectedFragment
@@ -19,7 +19,7 @@ import org.junit.runner.RunWith
  * Created by cnr on 12/5/2017.
  */
 @RunWith(AndroidJUnit4::class)
-class AutoExecutorTest {
+class AutoInjectorTest {
     @get:Rule
     var activityTestRule = ActivityTestRule(InjectedActivity::class.java, false, false)
     private val app = InstrumentationRegistry.getTargetContext().applicationContext as Application
@@ -30,14 +30,14 @@ class AutoExecutorTest {
     fun setup(){
 //        target = Executor(ActivityCallback(), SupportFragmentCallback(), FragmentCallback(), CallbackCreator())
 //        target.init(app)
-        AutoExecutor.init(app)
+        AutoInjector.init(app)
         activityTestRule.launchActivity(null)
     }
 
     @After
     fun clear(){
 //        target.clear()
-        AutoExecutor.clear()
+        AutoInjector.clear()
     }
 
     @Test
