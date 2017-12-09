@@ -1,0 +1,1 @@
+include ':autoinjector', ':autoinjector-integrationtest'
